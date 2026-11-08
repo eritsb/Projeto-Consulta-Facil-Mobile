@@ -1,0 +1,41 @@
+# Dono padrão de tudo (substituir quando os @ dos integrantes forem definidos)
+* @eritsb
+
+# P1 — infraestrutura, serviços compartilhados e configuração
+/src/servicos/api.ts          @eritsb
+/src/servicos/config.ts       @eritsb
+/src/servicos/auth.ts         @eritsb
+/src/servicos/pacientes.ts    @eritsb
+/src/servicos/catalogo.ts     @eritsb
+/src/servicos/agendamentos.ts @eritsb
+/src/tipos/                   @eritsb
+/package.json                 @eritsb
+/package-lock.json            @eritsb
+/app.json                     @eritsb
+/tsconfig.json                @eritsb
+/.github/                     @eritsb
+
+# P2 — design system, início, busca, agendamento e histórico
+/src/componentes/             @eritsb
+/src/tema/                    @eritsb
+/src/telas/inicio/            @eritsb
+/src/telas/busca/             @eritsb
+/src/telas/agendamento/       @eritsb
+/src/telas/historico/         @eritsb
+/app/(app)/inicio.tsx         @eritsb
+/app/(app)/busca.tsx          @eritsb
+
+# P3 — triagem, IA e notificações
+/src/telas/triagem/           @eritsb
+/src/telas/ia/                @eritsb
+/src/telas/notificacoes/      @eritsb
+/src/servicos/triagem.ts      @eritsb
+/src/servicos/ia.ts           @eritsb
+/src/servicos/notificacoes.ts @eritsb
+/src/servicos/mocks/          @eritsb
+
+# P4 — agendamentos, perfil, acessibilidade e QA
+/src/telas/agendamentos/      @eritsb
+/src/telas/perfil/            @eritsb
+/src/acessibilidade/          @eritsb
+/src/servicos/preferencias.ts @eritsb
