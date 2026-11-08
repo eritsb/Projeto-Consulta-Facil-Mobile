@@ -106,3 +106,60 @@ docs/                 telas, contrato da API, PWA e integrações pendentes
 O projeto é dividido entre quatro pessoas (P1–P4). Cada uma trabalha em uma
 branch `feat/...` e abre PR para `main`; ninguém faz push direto na `main` nem
 faz merge sem revisão.
+
+## O que foi feito nesta branch (`feat/infra-auth-eritsb`)
+
+Esta branch entrega a base do app e a fundação que as demais pessoas vão usar.
+
+### Base e qualidade
+
+- [x] Projeto Expo SDK 58 + React Native 0.88 + TypeScript strict.
+- [x] Expo Router com rotas em `app/`.
+- [x] ESLint, scripts de lint/typecheck/doctor e CI no GitHub Actions.
+- [x] `app.json`, `eas.json`, `.env.example` e `.gitignore`.
+
+### Autenticação e sessão
+
+- [x] Telas T01–T06 (splash, boas-vindas, login, cadastro, recuperação e
+  confirmação).
+- [x] `AuthContext` com login, cadastro, logout e restauração de sessão.
+- [x] Token e usuário persistidos com `expo-secure-store`.
+- [x] Componentes de auth reutilizáveis em `src/telas/auth/componentes/`.
+
+### Serviços e integrações
+
+- [x] Cliente HTTP com tratamento de erros em `src/servicos/api.ts`.
+- [x] Serviços de auth, pacientes, catálogo e agendamentos.
+- [x] Contratos e mocks de IA, triagem e notificações para o P3.
+- [x] Recuperação de senha com fallback enquanto o backend não tem o endpoint.
+- [x] URLs configuráveis por `EXPO_PUBLIC_*`.
+
+### PWA
+
+- [x] `public/manifest.json`, `public/sw.js` e `public/index.html`.
+- [x] Ícones 192/512/maskable e apple-touch-icon.
+- [x] Cache offline do shell/assets e fallback de navegação.
+- [x] Registro do service worker apenas em produção/web.
+- [x] `public/_redirects` com SPA fallback para Netlify.
+
+### Documentação
+
+- [x] `docs/telas.md`, `docs/api.md`, `docs/integracoes-pendentes.md`,
+  `docs/checklist.md` e `docs/pwa.md`.
+- [x] `AGENTS.md`, `CONTRIBUTING.md`, template de PR e CODEOWNERS.
+
+### Validação
+
+- [x] `npm run lint`
+- [x] `npm run typecheck`
+- [x] `npx expo-doctor` (20/20)
+- [x] `npm run build:web`
+- [x] `node --check public/sw.js`
+
+### Pendências do P1
+
+- [ ] Inicializar o EAS com a conta Expo e gerar o `projectId`.
+- [ ] Trocar os `@eritsb` do `.github/CODEOWNERS` pelos usuários reais.
+
+A tela `app/(app)/inicio.tsx` está como placeholder para o P2. As demais telas
+e fluxos seguem a divisão de `docs/checklist.md`.
