@@ -20,6 +20,7 @@ npx expo start
 npm run lint
 npm run typecheck
 npx expo-doctor
+npm run build:web
 ```
 
 Nunca use `npm install <pacote>` para dependências nativas: use
@@ -31,6 +32,7 @@ Nunca use `npm install <pacote>` para dependências nativas: use
 app/                      rotas (Expo Router)
   (auth)/                 login, cadastro, recuperação
   (app)/                  área autenticada
+public/                   PWA: manifest, sw.js, ícones e index.html
 src/
   componentes/            componentes reutilizáveis (P2)
   contexto/               AuthContext
@@ -41,10 +43,11 @@ src/
   telas/                  telas e componentes por domínio
   tema/                   cores, espaçamentos, raios
   tipos/                  tipos compartilhados
-  utilitarios/            formatadores e validadores
+  utilitarios/            formatadores, validadores e registro do PWA
 docs/
   telas.md                especificação de telas
   api.md                  contrato dos endpoints
+  pwa.md                  manifest, service worker e deploy
   integracoes-pendentes.md
 ```
 
@@ -57,6 +60,8 @@ docs/
   área de toque ≥ 44 px e nunca depender só de cor.
 - Não commitar `.env`, tokens ou chaves.
 - Não editar `ios/` e `android/` (gerados pelo Expo).
+- PWA fica em `public/`. Ao mudar a estratégia de cache, atualize a constante
+  `CACHE` em `public/sw.js`.
 
 ## Integrações pendentes
 

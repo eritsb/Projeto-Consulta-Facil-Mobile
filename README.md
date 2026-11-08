@@ -51,7 +51,29 @@ As variáveis vazias ativam o fallback local/mock. Nunca commite o `.env`.
 npm run lint
 npm run typecheck
 npm run doctor
+npm run build:web
 ```
+
+## PWA
+
+O app pode ser instalado como PWA e funciona offline para o shell e os recursos
+já visitados.
+
+- Manifest: `public/manifest.json`.
+- Service worker: `public/sw.js` (registrado apenas em produção/web).
+- Ícones: `public/icons/`.
+- Template HTML: `public/index.html`.
+
+Para testar:
+
+```bash
+npm run build:web
+npx serve dist
+```
+
+Abra `http://localhost:8080`, confira o manifest e o service worker no DevTools
+e teste com a rede offline. O deploy exige HTTPS e fallback de rotas para
+`index.html`. Detalhes em `docs/pwa.md`.
 
 ## Estrutura
 
@@ -59,14 +81,15 @@ npm run doctor
 app/                  rotas (Expo Router)
   (auth)/             boas-vindas, login, cadastro, recuperação
   (app)/              área autenticada
+public/               manifest, service worker, ícones e template HTML
 src/
   contexto/           AuthContext
   servicos/           cliente HTTP, serviços e mocks
   telas/              telas e componentes por domínio
   tema/               cores, espaçamentos e raios
   tipos/              tipos compartilhados
-  utilitarios/        formatadores e validadores
-docs/                 telas, contrato da API e integrações pendentes
+  utilitarios/        formatadores, validadores e registro do PWA
+docs/                 telas, contrato da API, PWA e integrações pendentes
 ```
 
 ## Documentação
@@ -74,6 +97,7 @@ docs/                 telas, contrato da API e integrações pendentes
 - `docs/telas.md`: especificação das telas T01–T27.
 - `docs/api.md`: contrato dos endpoints do backend.
 - `docs/integracoes-pendentes.md`: o que falta no backend e como integrar.
+- `docs/pwa.md`: manifest, service worker, testes offline e deploy.
 - `AGENTS.md`: regras para pessoas e agentes de IA.
 - `CONTRIBUTING.md`: fluxo de branches, commits e PRs.
 

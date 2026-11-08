@@ -22,6 +22,7 @@ review. Ninguém faz push direto na `main` nem merge sem aprovação.
 - [x] Telas T01–T06.
 - [x] Documentação (`docs/telas.md`, `docs/api.md`, `docs/integracoes-pendentes.md`).
 - [x] Contratos e mocks de IA/triagem/notificações para o P3.
+- [x] PWA: manifest, service worker, ícones e template HTML.
 - [ ] Configurar EAS com conta Expo (quando houver conta/projectId).
 - [ ] Trocar CODEOWNERS pelos usuários reais do time.
 
