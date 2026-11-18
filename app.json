@@ -50,7 +50,9 @@
           "microphonePermission": "Permita o acesso ao microfone para descrever seus sintomas por áudio."
         }
       ],
-      "expo-asset"
+      "expo-asset",
+      "expo-status-bar",
+      "expo-web-browser"
     ],
     "experiments": {
       "typedRoutes": false

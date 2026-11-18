@@ -12,15 +12,18 @@ Instruções para pessoas e agentes de IA que trabalham neste repositório.
 > Expo muda a cada SDK. Antes de usar uma API do Expo/EAS/React Native,
 > confira a documentação da versão em `https://docs.expo.dev/versions/v58.0.0/`.
 
+O app roda no **Expo Go SDK 58**. Os módulos nativos usados estão incluídos no
+Expo Go. Push remoto exige development build.
+
 ## Comandos
 
 ```bash
 npm install
 npx expo start
+npm run start:tunnel
 npm run lint
 npm run typecheck
 npx expo-doctor
-npm run build:web
 ```
 
 Nunca use `npm install <pacote>` para dependências nativas: use
@@ -32,7 +35,6 @@ Nunca use `npm install <pacote>` para dependências nativas: use
 app/                      rotas (Expo Router)
   (auth)/                 login, cadastro, recuperação
   (app)/                  área autenticada
-public/                   PWA: manifest, sw.js, ícones e index.html
 src/
   componentes/            componentes reutilizáveis (P2)
   contexto/               AuthContext
@@ -43,11 +45,10 @@ src/
   telas/                  telas e componentes por domínio
   tema/                   cores, espaçamentos, raios
   tipos/                  tipos compartilhados
-  utilitarios/            formatadores, validadores e registro do PWA
+  utilitarios/            formatadores e validadores
 docs/
   telas.md                especificação de telas
   api.md                  contrato dos endpoints
-  pwa.md                  manifest, service worker e deploy
   integracoes-pendentes.md
 ```
 
@@ -60,8 +61,6 @@ docs/
   área de toque ≥ 44 px e nunca depender só de cor.
 - Não commitar `.env`, tokens ou chaves.
 - Não editar `ios/` e `android/` (gerados pelo Expo).
-- PWA fica em `public/`. Ao mudar a estratégia de cache, atualize a constante
-  `CACHE` em `public/sw.js`.
 
 ## Integrações pendentes
 
